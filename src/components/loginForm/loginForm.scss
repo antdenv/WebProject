@@ -1,0 +1,125 @@
+@mixin flex-container($flexDirectionProperty) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $flexDirectionProperty;
+}
+
+@mixin text-styles($fontSize, $marginBottom) {
+    font-size: $fontSize;
+    margin-bottom: $marginBottom;
+}
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin button-inputs-style() {
+    border-radius: 15px;
+    overflow: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login {
+    @include flex-container(column);
+    @include size(700px, 630px);
+    background-color: $bg-color-light;
+    border-radius: 28px;
+}
+
+.login__logo-container {
+    @include flex-container(column);
+
+    .login__logo-text {
+        @include text-styles(36px, 0px);
+        margin-top: -12px;
+        background: $logo-text-gradient;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: $font-weight-medium;
+        letter-spacing: 1%;
+    }
+}
+
+.login__register-container {
+    @include text-styles(18px, 25px);
+    font-weight: $font-weight-medium;
+
+    span {
+        margin-right: 12px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $link-register-color;
+        opacity: 75%;
+        margin-left: 12px;
+    }
+
+    a:hover {
+        opacity: 90%;
+    }
+}
+
+.login__login-container {
+    .login__login-form {
+        @include flex-container(column);
+        margin: 18px 0;
+
+        .login__logo-text {
+            @include text-styles(32px, 10px);
+        }
+
+        .error {
+            width: 515px;
+            text-align: center;
+            color: $error-color;
+            visibility: visible;
+        }
+
+        .input {
+            @include size(515px, 52px);
+            @include text-styles(18px, 10px);
+            @include button-inputs-style();
+            border: $input-border;
+            opacity: 50%;
+            padding-left: 20px;
+            color: $color-dark;
+            outline: none;
+        }
+
+        .input:hover {
+            border: $input-hover-border;
+        }
+
+        .input:focus {
+            border: $input-focus-border;
+        }
+
+        .login__submit-button {
+            @include text-styles(22px, 8px);
+            @include size(535px, 52px);
+            @include flex-container(row);
+            @include button-inputs-style();
+            margin-top: 16px;
+            font-weight: $font-weight-medium;
+            border: none;
+            color: $bg-color-light;
+            background: $button-bg-gradient;
+        }
+
+        .login__submit-button:hover {
+            background: $button-bg-gradient-hover;
+        }
+
+        .login__login-text {
+            @include text-styles(18px, 10px);
+            margin-top: 14px;
+            font-weight: $font-weight-medium;
+            color: $form-text-color;
+        }
+    }
+}
