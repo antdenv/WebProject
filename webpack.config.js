@@ -17,11 +17,11 @@ module.exports = {
         alias: {
             Assets: path.resolve('src/static'),
             Components: path.resolve('src/components'),
-            Controllers: path.resolve('src/controllers'),
+            /*Controllers: path.resolve('src/controllers'),
             Events: path.resolve('src/events'),
             Models: path.resolve('src/models'),
             Modules: path.resolve('src/modules'),
-            Views: path.resolve('src/views'),
+            Views: path.resolve('src/views'),*/
         },
         extensions: ['.js'],
     },
