@@ -1,5 +1,6 @@
 import loginForm from './components/loginForm/loginForm.hbs';
+import signupForm from './components/signupForm/signupForm.hbs';
 import './style.scss';
 
 const root = document.getElementById('root');
-root.innerHTML = loginForm({});
+root.insertAdjacentHTML('afterend', signupForm({}));
