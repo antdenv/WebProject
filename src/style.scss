@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import './static/style/variables.scss';
 @import './components/loginForm/loginForm.scss';
+@import './components/signupForm/signupForm.scss';
+@import './components/feedPhotoCard/feedPhotoCard.scss';
+@import './components/feedInfoCard/feedInfoCard.scss';
+@import "./components/userIcon/userIcon.scss";
 
 * {
     font-family: 'Montserrat', sans-serif;
@@ -8,4 +12,7 @@
 
 body {
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

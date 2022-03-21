@@ -5,26 +5,38 @@
     flex-direction: $flexDirectionProperty;
 }
 
-@mixin text-styles($fontSize, $marginBottom) {
-    font-size: $fontSize;
-    margin-bottom: $marginBottom;
-}
-
 @mixin size($width, $height) {
     width: $width;
     height: $height;
 }
 
-@mixin button-inputs-style() {
-    border-radius: 15px;
-    overflow: none;
-    cursor: pointer;
-    text-decoration: none;
-}
-
 .signup {
     @include flex-container(column);
-    @include size(700px, 630px);
+    @include size(700px, 720px);
     background-color: $bg-color-light;
     border-radius: 28px;
+}
+
+@media screen and (max-width: 1150px) {
+    .signup {
+        @include size(620px, 690px);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .signup {
+        @include size(520px, 660px);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .signup {
+        @include size(420px, 640px);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .signup {
+        @include size(360px, 650px);
+    }
 }
