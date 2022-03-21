@@ -1,220 +1,252 @@
 @mixin flex-container($flexDirectionProperty) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $flexDirectionProperty;
+  display: flex;
+  flex-direction: $flexDirectionProperty;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin text-styles($fontSize, $marginBottom) {
-    font-size: $fontSize;
-    margin-bottom: $marginBottom;
+  margin-bottom: $marginBottom;
+  font-size: $fontSize;
 }
 
 @mixin size($width, $height) {
-    width: $width;
-    height: $height;
+  width: $width;
+  height: $height;
 }
 
 @mixin button-inputs-style() {
-    border-radius: 15px;
-    overflow: none;
-    cursor: pointer;
-    text-decoration: none;
+  overflow: none;
+  text-decoration: none;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
 .login {
-    @include flex-container(column);
-    @include size(700px, 630px);
-    background-color: $bg-color-light;
-    border-radius: 28px;
+  @include flex-container(column);
+  @include size(700px, 630px);
+
+  background-color: $bg-color-light;
+  border-radius: 28px;
 }
 
-.login__logo-container, .signup__logo-container {
-    @include flex-container(column);
+.login__logo-container,
+.signup__logo-container {
+  @include flex-container(column);
 }
 
-.login__logo-text, .signup__logo-text {
-    @include text-styles(36px, 0px);
-    margin-top: -12px;
-    background: $logo-text-gradient;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: $font-weight-medium;
-    letter-spacing: 1%;
+.login__logo-text,
+.signup__logo-text {
+  @include text-styles(36px, 0);
+
+  margin-top: -12px;
+  font-weight: $font-weight-medium;
+  letter-spacing: 1%;
+  background: $logo-text-gradient;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.login__register-container_text, .signup__signin-container_text {
-    @include text-styles(18px, 25px);
-    font-weight: $font-weight-medium;
+.login__register-container_text,
+.signup__signin-container_text {
+  @include text-styles(18px, 25px);
 
-    a {
-        text-decoration: none;
-        color: $link-register-color;
-        opacity: 75%;
-        margin-left: 20px;
-    }
+  font-weight: $font-weight-medium;
 
-    a:hover {
-        opacity: 90%;
-    }
+  a {
+    margin-left: 20px;
+    color: $link-register-color;
+    text-decoration: none;
+    opacity: 0.75;
+  }
+
+  a:hover {
+    opacity: 0.9;
+  }
 }
 
-.login__login-form, .signup__signup-form {
-    @include flex-container(column);
-    margin: 18px 0;
+.login__login-form,
+.signup__signup-form {
+  @include flex-container(column);
+
+  margin: 18px 0;
 }
 
 .error {
-    width: 515px;
-    text-align: center;
-    color: $error-color;
-    visibility: visible;
+  width: 515px;
+  color: $error-color;
+  text-align: center;
+  visibility: visible;
 }
 
 .input {
-    @include size(515px, 52px);
-    @include text-styles(18px, 10px);
-    @include button-inputs-style();
-    border: $input-border;
-    opacity: 50%;
-    padding-left: 20px;
-    color: $color-dark;
-    outline: none;
+  @include size(515px, 52px);
+  @include text-styles(18px, 10px);
+  @include button-inputs-style();
+
+  padding-left: 20px;
+  color: $color-dark;
+  border: $input-border;
+  outline: none;
+  opacity: 0.5;
 }
 
 .input:hover {
-    border: $input-hover-border;
+  border: $input-hover-border;
 }
 
 .input:focus {
-    border: $input-focus-border;
+  border: $input-focus-border;
 }
 
-.login__submit-button, .signup__submit-button {
-    @include text-styles(22px, 8px);
-    @include size(535px, 52px);
-    @include flex-container(row);
-    @include button-inputs-style();
-    margin-top: 16px;
-    font-weight: $font-weight-medium;
-    border: none;
-    color: $bg-color-light;
-    background: $button-bg-gradient;
+.login__submit-button,
+.signup__submit-button {
+  @include text-styles(22px, 8px);
+  @include size(535px, 52px);
+  @include flex-container(row);
+  @include button-inputs-style();
+
+  margin-top: 16px;
+  color: $bg-color-light;
+  font-weight: $font-weight-medium;
+  background: $button-bg-gradient;
+  border: none;
 }
 
-.login__submit-button:hover, .signup__submit-button:hover {
-    background: $button-bg-gradient-hover;
+.login__submit-button:hover,
+.signup__submit-button:hover {
+  background: $button-bg-gradient-hover;
 }
 
-.login__login-text, .signup__signup-text {
-    @include text-styles(18px, 10px);
-    margin-top: 14px;
-    font-weight: $font-weight-medium;
-    color: $form-text-color;
+.login__login-text,
+.signup__signup-text {
+  @include text-styles(18px, 10px);
+
+  margin-top: 14px;
+  color: $form-text-color;
+  font-weight: $font-weight-medium;
 }
 
 @media screen and (max-width: 1150px) {
-    .login {
-        @include size(620px, 590px);
-    }
+  .login {
+    @include size(620px, 590px);
+  }
 
-    .input {
-        @include size(470px, 46px);
-    }
+  .input {
+    @include size(470px, 46px);
+  }
 
-    .login__submit-button, .signup__submit-button {
-        @include size(494px, 50px);
-    }
+  .login__submit-button,
+  .signup__submit-button {
+    @include size(494px, 50px);
+  }
 
-    .login__register-container_text, .signup__signin-container_text {
-        @include text-styles(16px, 20px);
-    }
+  .login__register-container_text,
+  .signup__signin-container_text {
+    @include text-styles(16px, 20px);
+  }
 
-    .login__logo-text, .signup__logo-text {
-        @include text-styles(28px, 0px);
-    }
+  .login__logo-text,
+  .signup__logo-text {
+    @include text-styles(28px, 0);
+  }
 }
 
 @media screen and (max-width: 850px) {
-    .login {
-        @include size(520px, 560px);
-    }
+  .login {
+    @include size(520px, 560px);
+  }
 
-    .input {
-        @include size(380px, 40px);
-        border-radius: 10px;
-    }
+  .input {
+    @include size(380px, 40px);
 
-    .login__submit-button, .signup__submit-button {
-        @include size(404px, 44px);
-        font-size: 18px;
-        border-radius: 10px;
-    }
+    border-radius: 10px;
+  }
 
-    .login__register-container_text, .signup__signin-container_text {
-        @include text-styles(16px, 20px);
-    }
+  .login__submit-button,
+  .signup__submit-button {
+    @include size(404px, 44px);
 
-    .login__logo-text, .signup__logo-text {
-        @include text-styles(28px, 0px);
-    }
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .login__register-container_text,
+  .signup__signin-container_text {
+    @include text-styles(16px, 20px);
+  }
+
+  .login__logo-text,
+  .signup__logo-text {
+    @include text-styles(28px, 0);
+  }
 }
 
 @media screen and (max-width: 650px) {
-    .login {
-        @include size(420px, 560px);
-    }
+  .login {
+    @include size(420px, 560px);
+  }
 
-    .input {
-        @include size(300px, 36px);
-        border-radius: 10px;
-        font-size: 14px;
-    }
+  .input {
+    @include size(300px, 36px);
 
-    .login__submit-button, .signup__submit-button {
-        @include size(324px, 40px);
-        font-size: 18px;
-        border-radius: 10px;
-    }
+    font-size: 14px;
+    border-radius: 10px;
+  }
 
-    .login__register-container_text, .signup__signin-container_text {
-        @include text-styles(15px, 0px);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+  .login__submit-button,
+  .signup__submit-button {
+    @include size(324px, 40px);
 
-        a {
-            margin-left: 0;
-            margin-top: 6px;
-        }
-    }
+    font-size: 18px;
+    border-radius: 10px;
+  }
 
-    .login__logo-text, .signup__logo-text {
-        @include text-styles(26px, 0px);
-    }
+  .login__register-container_text,
+  .signup__signin-container_text {
+    @include text-styles(15px, 0);
 
-    .login__login-text, .error {
-        font-size: 16px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    .login__login-form, .signup__signup-form {
-        margin: 14px 0;
+    a {
+      margin-top: 6px;
+      margin-left: 0;
     }
+  }
+
+  .login__logo-text,
+  .signup__logo-text {
+    @include text-styles(26px, 0);
+  }
+
+  .login__login-text,
+  .error {
+    font-size: 16px;
+  }
+
+  .login__login-form,
+  .signup__signup-form {
+    margin: 14px 0;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .login {
-        @include size(360px, 540px);
-    }
+  .login {
+    @include size(360px, 540px);
+  }
 
-    .input {
-        @include size(270px, 36px);
-        font-size: 14px;
-    }
+  .input {
+    @include size(270px, 36px);
 
-    .login__submit-button, .signup__submit-button {
-        @include size(294px, 40px);
-        font-size: 18px;
-    }
+    font-size: 14px;
+  }
+
+  .login__submit-button,
+  .signup__submit-button {
+    @include size(294px, 40px);
+
+    font-size: 18px;
+  }
 }
