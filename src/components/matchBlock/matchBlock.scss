@@ -76,9 +76,10 @@
     display: grid;
     grid-template-columns: 100px 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
-    margin-bottom: 69px;
+    margin-bottom: 56px;
     margin-left: 40px;
     margin-right: 40px;
+    margin-top: 10px;
 
     button {
         @include default-button();
