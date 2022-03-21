@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack --mode development & webpack serve",
     "build": "webpack --mode development",
-    "debug": "DEBUG=true webpack serve",
     "linter": "eslint --config=.eslintrc.json src/",
     "linterFixOption": "eslint --fix --config=.eslintrc.json src/"
   },

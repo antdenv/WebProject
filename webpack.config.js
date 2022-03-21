@@ -13,6 +13,7 @@ const PATHS = {
 }
 
 module.exports = {
+    watch: true,
     resolve: {
         alias: {
             Assets: path.resolve('src/static'),
@@ -71,19 +72,13 @@ module.exports = {
         new webpack.DefinePlugin({
             DEBUG: debug,
         }),
-        new CleanWebpackPlugin(),
     ],
     devServer: {
-        hot: debug,
-        inline: debug,
-        clientLogLevel: debug ? 'debug' : 'silent',
-        writeToDisk: true,
-        disableHostCheck: true,
-        publicPath: '/',
-        contentBase: path.resolve('src'),
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        compress: false,
         port: 3000,
         historyApiFallback: true,
-        compress: false
     },
-
 }
