@@ -1,0 +1,92 @@
+@mixin flex-container($flexDirectionProperty) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $flexDirectionProperty;
+}
+
+@mixin text-styles($fontSize, $marginBottom) {
+    font-size: $fontSize;
+    margin-bottom: $marginBottom;
+}
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin button-inputs-style() {
+    border-radius: 15px;
+    overflow: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@mixin default-button() {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    background: #ffff;
+}
+
+.matchBlock {
+    @include flex-container(column);
+    @include size(475px, 410px);
+    background-color: #ffff;
+    border-radius: 15px;
+}
+
+.matchBlock__upper-buttons {
+    @include flex-container(row);
+    @include size(431px, 44px);
+    background-color: #dadada;
+    border-radius: 10px;
+    button {
+        @include default-button();
+        @include button-inputs-style();
+        @include size(180px, 32px);
+        @include flex-container(row);
+        margin-inline: 14px;
+        border-radius: 12px;
+    }
+}
+
+#match-button {
+    background-color: #f26477;
+    .matchBlock__upper-buttons_button-text {
+        font-weight: $font-weight-semibold;
+        @include text-styles(14px, 0px);
+        margin-left: 12px;
+        color: #ffff;
+    }
+}
+
+#message-button {
+    background-color: #ffff;
+    .matchBlock__upper-buttons_button-text {
+        font-weight: $font-weight-semibold;
+        @include text-styles(14px, 0px);
+        margin-left: 12px;
+        color: #000000;
+    }
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    margin-bottom: 69px;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    button {
+        @include default-button();
+        @include button-inputs-style();
+        @include size(70px, 70px);
+        background-color: #dadada;
+        border-radius: 50%;
+        align-self: center;
+        justify-self: center;
+    }
+}
