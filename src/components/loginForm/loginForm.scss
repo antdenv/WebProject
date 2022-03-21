@@ -24,7 +24,7 @@
 
 .login {
   @include flex-container(column);
-  @include size(700px, 630px);
+  @include size(690px, 610px);
 
   background-color: $bg-color-light;
   border-radius: 28px;
@@ -43,6 +43,7 @@
   font-weight: $font-weight-medium;
   letter-spacing: 1%;
   background: $logo-text-gradient;
+  -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -102,7 +103,7 @@
 .login__submit-button,
 .signup__submit-button {
   @include text-styles(22px, 8px);
-  @include size(535px, 52px);
+  @include size(515px, 52px);
   @include flex-container(row);
   @include button-inputs-style();
 
@@ -138,7 +139,7 @@
 
   .login__submit-button,
   .signup__submit-button {
-    @include size(494px, 50px);
+    @include size(470px, 50px);
   }
 
   .login__register-container_text,
@@ -165,7 +166,7 @@
 
   .login__submit-button,
   .signup__submit-button {
-    @include size(404px, 44px);
+    @include size(380px, 44px);
 
     font-size: 18px;
     border-radius: 10px;
@@ -196,7 +197,7 @@
 
   .login__submit-button,
   .signup__submit-button {
-    @include size(324px, 40px);
+    @include size(300px, 40px);
 
     font-size: 18px;
     border-radius: 10px;
@@ -245,7 +246,7 @@
 
   .login__submit-button,
   .signup__submit-button {
-    @include size(294px, 40px);
+    @include size(270px, 40px);
 
     font-size: 18px;
   }

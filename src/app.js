@@ -3,11 +3,17 @@ import signupForm from './components/signupForm/signupForm.hbs';
 import feedPhotoCard from './components/feedPhotoCard/feedPhotoCard.hbs';
 import feedInfoCard from './components/feedInfoCard/feedInfoCard.hbs';
 import userIcon from './components/userIcon/userIcon.hbs';
+import signInPage from './views/signInPage/signInPage.hbs';
+import {SignInView} from './views/signInPage/signInPage.js';
 import './style.scss';
 
 const root = document.getElementById('root');
-root.insertAdjacentHTML('afterend', userIcon({
-    name: 'Иван Букашка',
-    age: 21,
-    location: 'Митино-Букашкино'
-}));
+
+const login = new SignInView(root);
+login.render();
+/*login.showError({
+    emailError: 'Неправильная электронная почта',
+    passwordError: 'Неправильная электронная почта',
+});*/
+
+
