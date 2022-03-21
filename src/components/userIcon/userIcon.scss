@@ -1,0 +1,97 @@
+@mixin flex-container($flexDirectionProperty) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $flexDirectionProperty;
+}
+
+@mixin text-styles($fontSize, $marginBottom) {
+    font-size: $fontSize;
+    margin-bottom: $marginBottom;
+}
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin button-inputs-style() {
+    border-radius: 15px;
+    overflow: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.userIcon {
+    @include flex-container(row);
+    background-color: $bg-color-light;
+    border-radius: 28px;
+    @include size(474px, 151px);
+    @include text-styles(16, 0);
+    font-weight: $font-weight-semibold;
+}
+
+.userIcon__avatar {
+    @include size(100px, 100px);
+    margin-right: 10px;
+    border-radius: 12px;
+}
+
+.userIcon__info-box {
+    @include flex-container(column);
+}
+
+.userIcon__info-box__personal {
+    @include flex-container(column);
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+.userIcon__info-box__personal-location {
+    @include flex-container(row);
+    img {
+        margin-right: 15px;
+    }
+    div {
+        margin-right: 15px;
+    }
+}
+
+.userIcon__info-box__settings {
+    @include flex-container(row);
+    margin-bottom: 12;
+    margin-left: 0px;
+    button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        border-radius: 0;
+        background: #ffff;
+        font-weight: $font-weight-semibold;
+        color: $settings-link-color;
+        opacity: 60%;
+    }
+    img {
+        opacity: 60%;
+    }
+}
+
+.userIcon__info-box__settings:hover {
+    button {
+        opacity: 100%;
+        cursor: pointer;
+    }
+    img {
+        opacity: 100%;
+        cursor: pointer;
+    }
+}
+
+.userIcon__info-location-png {
+    @include size(20px, 20px);
+}
+
+.userIcon__info-settings-png {
+    @include size(25px, 25px);
+}

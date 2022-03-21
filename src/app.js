@@ -1,6 +1,7 @@
-import loginForm from './components/loginForm/loginForm.hbs';
-import signupForm from './components/signupForm/signupForm.hbs';
-import './style.scss';
+import loginForm from "./components/loginForm/loginForm.hbs";
+import userIcon from "./components/userIcon/userIcon.hbs";
+import "./style.scss";
 
-const root = document.getElementById('root');
-root.insertAdjacentHTML('afterend', signupForm({}));
+const root = document.getElementById("root");
+// root.innerHTML = loginForm({});
+root.innerHTML = userIcon({ name: "David Jones", age: 25, location: "New York" });
