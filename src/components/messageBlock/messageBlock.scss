@@ -1,0 +1,131 @@
+@mixin flex-container($flexDirectionProperty) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $flexDirectionProperty;
+}
+
+@mixin text-styles($fontSize, $marginBottom) {
+    font-size: $fontSize;
+    margin-bottom: $marginBottom;
+}
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin button-inputs-style() {
+    border-radius: 15px;
+    overflow: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@mixin default-button() {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    background: #ffff;
+}
+
+.messageBlock {
+    @include flex-container(column);
+    @include size(475px, 410px);
+    background-color: #ffff;
+    border-radius: 15px;
+    position: relative;
+    margin-top: 25px;
+}
+
+.messageBlock__upper-buttons {
+    @include flex-container(row);
+    @include size(431px, 44px);
+    position: absolute;
+    top: 0;
+    background-color: #dadada;
+    border-radius: 10px;
+    button {
+        @include default-button();
+        @include button-inputs-style();
+        @include size(180px, 32px);
+        @include flex-container(row);
+        margin-inline: 14px;
+        border-radius: 12px;
+    }
+    #match-button {
+        background-color: #ffff;
+        .messageBlock__upper-buttons_button-text {
+            font-weight: $font-weight-semibold;
+            @include text-styles(14px, 0px);
+            margin-left: 12px;
+            color: #000;
+        }
+    }
+    #message-button {
+        background-color: #9589b9;
+        .messageBlock__upper-buttons_button-text {
+            font-weight: $font-weight-semibold;
+            @include text-styles(14px, 0px);
+            margin-left: 12px;
+            color: #ffff;
+        }
+    }
+}
+
+.messageBlock__messages {
+    display: inline-block;
+    justify-content: center;
+    @include size(440px, 285px);
+    overflow-y: auto;
+    img {
+        @include size(70px, 70px);
+        border-radius: 50%;
+    }
+}
+
+.messageBlock__messages-message {
+    @include default-button();
+    @include button-inputs-style();
+    @include size(430px, 95px);
+    @include flex-container(row);
+    width: fit-content;
+    border-bottom: 1px solid #dadada;
+    .messageBlock__messages-message__text-block {
+        @include flex-container(column);
+        align-items: flex-start;
+        font-weight: $font-weight-semibold;
+        @include text-styles(14px, 0px);
+        margin-left: 25px;
+    }
+    .messageBlock__messages-message__counter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #9589b9;
+        @include size(24px, 24px);
+        border-radius: 50%;
+        margin-left: 70px;
+        margin-right: 20px;
+    }
+}
+
+.messageBlock__messages-message:hover {
+    transition: 0.3s linear;
+    background-color: #dadada;
+}
+
+.messageBlock__messages::-webkit-scrollbar {
+    width: 10px;
+}
+
+.messageBlock__messages::-webkit-scrollbar-track {
+    background-color: #f9f9fd;
+    border-radius: 10px;
+}
+
+.messageBlock__messages::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: $form-button-gradient;
+}

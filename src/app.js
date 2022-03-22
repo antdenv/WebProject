@@ -6,11 +6,10 @@ import userIcon from './components/userIcon/userIcon.hbs';
 import signInPage from './views/signInPage/signInPage.hbs';
 import {SignInView} from './views/signInPage/signInPage.js';
 import changeForm from './components/changeForm/changeForm.hbs';
+import matchBlock from './components/matchBlock/matchBlock.hbs';
+import messageBlock from './components/messageBlock/messageBlock.hbs';
 import './style.scss';
 
 const root = document.getElementById('root');
-
-const login = new SignInView(root);
-login.render();
-
+root.innerHTML = changeForm({});
 

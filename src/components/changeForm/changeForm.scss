@@ -30,8 +30,8 @@
 }
 
 .changeForm__input-block {
-    @include flex-container(column);
-    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
     margin-left: 73px;
     margin-bottom: 33px;
     margin-right: 73px;
@@ -40,6 +40,7 @@
 .changeForm__input-block__input {
     @include flex-container(row);
     align-items: center;
+    margin-block: 3px;
     p {
         font-weight: $font-weight-semibold;
         @include text-styles(16px, 0px);
@@ -50,16 +51,28 @@
         @include size(220px, 32px);
         border: $input-border;
         border-radius: 8px;
+        opacity: 36%;
+    }
+    input:hover {
+        transition: 0.3s linear;
+        opacity: 100%;
+    }
+
+    input:focus {
+        transition: 0.2s linear;
+        outline-width: 1px;
+        outline-color: #8067ef;
     }
 }
 
 .changeForm__input-block__button {
     @include flex-container(row);
     align-items: center;
+    margin-block: 3px;
     p {
         font-weight: $font-weight-semibold;
         @include text-styles(16px, 0px);
-        @include size(170px, 20px);
+        @include size(140px, 20px);
         margin: 0px;
     }
     button {
@@ -75,10 +88,19 @@
         color: #ffff;
         border-radius: 6px;
     }
+
+    button:hover {
+        transition: 0.1s linear;
+        transform: scale(0.98);
+    }
 }
 
 .changeForm__bottom-button {
     @include flex-container(row);
+    align-items: stretch;
+    width: 324px;
+    position: relative;
+    margin-top: 10px;
     button {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -88,10 +110,18 @@
         @include button-inputs-style();
         background: $form-button-gradient;
         @include size(152px, 32px);
-        margin: 20px;
         @include text-styles(14px, 0px);
         color: #ffff;
         border-radius: 8px;
+        margin-top: 5px;
+    }
+    #changeForm__cancel-botton {
+        position: absolute;
+        left: 0;
+    }
+    #changeForm__save-botton {
+        position: absolute;
+        right: 0;
     }
 }
 
@@ -99,6 +129,6 @@
     text-align: center;
     color: $error-color;
     font-size: 12px;
-    margin-left: 140px;
-    overflow: hidden;
+    margin-left: 125px;
+    visibility: visible;
 }
