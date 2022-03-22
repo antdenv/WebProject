@@ -139,9 +139,12 @@
 }
 
 .error {
+    width: 200px;
     text-align: center;
     color: $error-color;
     font-size: 12px;
     margin-left: 125px;
     visibility: visible;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }

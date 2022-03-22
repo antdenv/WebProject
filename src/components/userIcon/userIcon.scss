@@ -1,97 +1,108 @@
 @mixin flex-container($flexDirectionProperty) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $flexDirectionProperty;
+  display: flex;
+  flex-direction: $flexDirectionProperty;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin text-styles($fontSize, $marginBottom) {
-    font-size: $fontSize;
-    margin-bottom: $marginBottom;
+  margin-bottom: $marginBottom;
+  font-size: $fontSize;
 }
 
 @mixin size($width, $height) {
-    width: $width;
-    height: $height;
+  width: $width;
+  height: $height;
 }
 
 @mixin button-inputs-style() {
-    border-radius: 15px;
-    overflow: none;
-    cursor: pointer;
-    text-decoration: none;
+  overflow: none;
+  text-decoration: none;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
-.userIcon {
-    @include flex-container(row);
-    background-color: $bg-color-light;
-    border-radius: 28px;
-    @include size(474px, 151px);
-    @include text-styles(16, 0);
+.user-icon {
+  @include flex-container(row);
+
+  font-weight: $font-weight-semibold;
+  background-color: $bg-color-light;
+  border-radius: 22px;
+  @include size(475px, 151px);
+  @include text-styles(16, 0);
+}
+
+.user-icon__avatar {
+  @include size(100px, 100px);
+
+  margin-right: 10px;
+  border-radius: 12px;
+}
+
+.user-icon__info-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-icon__info-text {
+  margin-bottom: 3px;
+}
+
+.user-icon__info-box__personal {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+.user-icon__info-box__personal-location {
+  @include flex-container(row);
+
+  img {
+    margin-right: 8px;
+  }
+
+  div {
+    margin-right: 15px;
+  }
+}
+
+.user-icon__info-box__settings {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 12;
+  margin-left: 20px;
+
+  button {
+    color: $settings-link-color;
     font-weight: $font-weight-semibold;
+    background: #ffff;
+    border: 0;
+    border-radius: 0;
+    opacity: 0.6;
+  }
+
+  img {
+    opacity: 0.6;
+  }
 }
 
-.userIcon__avatar {
-    @include size(100px, 100px);
-    margin-right: 10px;
-    border-radius: 12px;
+.user-icon__info-box__settings:hover {
+  button {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  img {
+    cursor: pointer;
+    opacity: 1;
+  }
 }
 
-.userIcon__info-box {
-    @include flex-container(column);
+.user-icon__info-location-png {
+  @include size(20px, 20px);
 }
 
-.userIcon__info-box__personal {
-    @include flex-container(column);
-    margin-bottom: 30px;
-    margin-left: 20px;
-}
-
-.userIcon__info-box__personal-location {
-    @include flex-container(row);
-    img {
-        margin-right: 15px;
-    }
-    div {
-        margin-right: 15px;
-    }
-}
-
-.userIcon__info-box__settings {
-    @include flex-container(row);
-    margin-bottom: 12;
-    margin-left: 0px;
-    button {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border: 0;
-        border-radius: 0;
-        background: #ffff;
-        font-weight: $font-weight-semibold;
-        color: $settings-link-color;
-        opacity: 60%;
-    }
-    img {
-        opacity: 60%;
-    }
-}
-
-.userIcon__info-box__settings:hover {
-    button {
-        opacity: 100%;
-        cursor: pointer;
-    }
-    img {
-        opacity: 100%;
-        cursor: pointer;
-    }
-}
-
-.userIcon__info-location-png {
-    @include size(20px, 20px);
-}
-
-.userIcon__info-settings-png {
-    @include size(25px, 25px);
+.user-icon__info-settings-png {
+  @include size(25px, 25px);
 }
