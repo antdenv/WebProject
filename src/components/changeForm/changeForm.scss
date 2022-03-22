@@ -52,6 +52,7 @@
         border: $input-border;
         border-radius: 8px;
         opacity: 36%;
+        transition: 0.3s linear;
     }
     input:hover {
         transition: 0.3s linear;
@@ -68,14 +69,20 @@
 .changeForm__input-block__button {
     @include flex-container(row);
     align-items: center;
-    margin-block: 3px;
+    position: relative;
+    width: 324px;
+    margin-top: 20px;
     p {
+        position: absolute;
+        left: 0;
         font-weight: $font-weight-semibold;
         @include text-styles(16px, 0px);
         @include size(140px, 20px);
         margin: 0px;
     }
     button {
+        position: absolute;
+        right: 0;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
@@ -83,10 +90,11 @@
         background: #ffff;
         @include button-inputs-style();
         background: $form-button-gradient;
-        @include size(180px, 32px);
+        @include size(152px, 32px);
         @include text-styles(14px, 0px);
         color: #ffff;
         border-radius: 6px;
+        transition: 0.1s linear;
     }
 
     button:hover {
@@ -100,7 +108,7 @@
     align-items: stretch;
     width: 324px;
     position: relative;
-    margin-top: 10px;
+    margin-top: 20px;
     button {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -114,6 +122,7 @@
         color: #ffff;
         border-radius: 8px;
         margin-top: 5px;
+        transition: 0.1s linear;
     }
     #changeForm__cancel-botton {
         position: absolute;
@@ -122,6 +131,10 @@
     #changeForm__save-botton {
         position: absolute;
         right: 0;
+    }
+    button:hover {
+        transition: 0.1s linear;
+        transform: scale(0.98);
     }
 }
 
