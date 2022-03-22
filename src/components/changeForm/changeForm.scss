@@ -1,0 +1,104 @@
+@mixin flex-container($flexDirectionProperty) {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: $flexDirectionProperty;
+}
+
+@mixin text-styles($fontSize, $marginBottom) {
+    font-size: $fontSize;
+    margin-bottom: $marginBottom;
+}
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin button-inputs-style() {
+    border-radius: 15px;
+    overflow: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.changeForm {
+    @include flex-container(column);
+    @include size(470px, 400px);
+    background-color: #ffff;
+    border-radius: 28px;
+}
+
+.changeForm__input-block {
+    @include flex-container(column);
+    margin-top: 34px;
+    margin-left: 73px;
+    margin-bottom: 33px;
+    margin-right: 73px;
+}
+
+.changeForm__input-block__input {
+    @include flex-container(row);
+    align-items: center;
+    p {
+        font-weight: $font-weight-semibold;
+        @include text-styles(16px, 0px);
+        @include size(140px, 20px);
+        margin: 0px;
+    }
+    input {
+        @include size(220px, 32px);
+        border: $input-border;
+        border-radius: 8px;
+    }
+}
+
+.changeForm__input-block__button {
+    @include flex-container(row);
+    align-items: center;
+    p {
+        font-weight: $font-weight-semibold;
+        @include text-styles(16px, 0px);
+        @include size(170px, 20px);
+        margin: 0px;
+    }
+    button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        background: #ffff;
+        @include button-inputs-style();
+        background: $form-button-gradient;
+        @include size(180px, 32px);
+        @include text-styles(14px, 0px);
+        color: #ffff;
+        border-radius: 6px;
+    }
+}
+
+.changeForm__bottom-button {
+    @include flex-container(row);
+    button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        background: #ffff;
+        @include button-inputs-style();
+        background: $form-button-gradient;
+        @include size(152px, 32px);
+        margin: 20px;
+        @include text-styles(14px, 0px);
+        color: #ffff;
+        border-radius: 8px;
+    }
+}
+
+.error {
+    text-align: center;
+    color: $error-color;
+    font-size: 12px;
+    margin-left: 140px;
+    overflow: hidden;
+}

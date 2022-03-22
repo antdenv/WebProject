@@ -5,15 +5,12 @@ import feedInfoCard from './components/feedInfoCard/feedInfoCard.hbs';
 import userIcon from './components/userIcon/userIcon.hbs';
 import signInPage from './views/signInPage/signInPage.hbs';
 import {SignInView} from './views/signInPage/signInPage.js';
+import changeForm from './components/changeForm/changeForm.hbs';
 import './style.scss';
 
 const root = document.getElementById('root');
 
 const login = new SignInView(root);
 login.render();
-/*login.showError({
-    emailError: 'Неправильная электронная почта',
-    passwordError: 'Неправильная электронная почта',
-});*/
 
 
