@@ -1,0 +1,111 @@
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex-container($flexDirectionProperty) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $flexDirectionProperty;
+}
+
+.mainPage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    @include size(100%, 100vh);
+    background: $content-bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.mainPage__userIcon {
+    position: absolute;
+    left: 201px;
+    top: 68px;
+}
+
+.mainPage__messageBlock {
+    position: absolute;
+    left: 201px;
+    top: 246px;
+    transition: opacity 1s;
+}
+
+.mainPage__matchBlock {
+    position: absolute;
+    left: 201px;
+    top: 246px;
+    display: none;
+    transition: opacity 1s;
+}
+
+.mainPage__changeForm {
+    position: absolute;
+    left: 201px;
+    top: 246px;
+    display: none;
+    transition: opacity 1s;
+}
+
+.mainPage__userMessageBlock {
+    position: absolute;
+    left: 201px;
+    top: 246px;
+    display: none;
+    transition: opacity 1s;
+}
+
+.mainPage__feedPhotoCard {
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    top: 68px;
+}
+
+.mainPage__feedInfoCard {
+    position: absolute;
+    right: 196px;
+    top: 68px;
+}
+
+// Active classes
+
+.display-flex {
+    display: flex;
+}
+
+.display-none {
+    display: none;
+}
+
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     z-index: 3;
+
+//     background-image: url("./static/images/background.png");
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+
+// .overlay {
+//     @include size(100%, 100vh);
+//     background: $overlay-gradient;
+//     opacity: 65%;
+//     position: absolute;
+//     z-index: 2;
+
+//     @media (max-width: 1600px) {
+//         background-repeat: repeat-x;
+//         opacity: 85%;
+//     }
+
+//     @media (max-width: 1150px) {
+//         opacity: 95%;
+//     }
+// }
