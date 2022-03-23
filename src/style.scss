@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 @import "./static/style/variables.scss";
-//@import "./components/loginForm/loginForm.scss";
+@import "./components/loginForm/loginForm.scss";
 @import "./components/userIcon/userIcon.scss";
 @import "./components/changeForm/changeForm.scss";
 @import "./components/matchBlock/matchBlock.scss";
 @import "./components/messageBlock/messageBlock.scss";
+@import "./components/feedInfoCard/feedInfoCard.scss";
+@import "./components/feedPhotoCard/feedPhotoCard.scss";
+@import "./components/userMessageBlock/userMessageBlock.scss";
+@import "./src/views/mainPage/mainPage.scss";
 
 * {
     font-family: "Montserrat", sans-serif;
