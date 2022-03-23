@@ -27,7 +27,7 @@
     -moz-appearance: none;
     appearance: none;
     border: 0;
-    background: #ffff;
+    background: $bg-color-light;
 }
 
 .messageBlock {
@@ -35,7 +35,7 @@
     flex-direction: column;
     align-items: center;
     @include size(475px, 385px);
-    background-color: #ffff;
+    background-color: $bg-color-light;
     border-radius: 15px;
     position: relative;
     padding-top: 20px;
@@ -44,7 +44,7 @@
 .messageBlock__upper-buttons {
     @include flex-container(row);
     @include size(431px, 44px);
-    background-color: #dadada;
+    background-color: $light-bg-color;
     border-radius: 10px;
     margin-bottom: 20px;
     button {
@@ -56,7 +56,7 @@
         border-radius: 12px;
     }
     #match-button {
-        background-color: #ffff;
+        background-color: $bg-color-light;
         .messageBlock__upper-buttons_button-text {
             font-weight: $font-weight-semibold;
             @include text-styles(14px, 0px);
@@ -65,12 +65,12 @@
         }
     }
     #message-button {
-        background-color: #9589b9;
+        background-color: $button-dark-color;
         .messageBlock__upper-buttons_button-text {
             font-weight: $font-weight-semibold;
             @include text-styles(14px, 0px);
             margin-left: 12px;
-            color: #ffff;
+            color: $bg-color-light;
         }
     }
 }
@@ -92,7 +92,7 @@
     @include size(420px, 95px);
     @include flex-container(row);
     width: fit-content;
-    border-bottom: 1px solid #dadada;
+    border-bottom: 1px solid $light-bg-color;
     padding-left: 10px;
     margin-right: 10px;
     .messageBlock__messages-message__text-block {
@@ -112,7 +112,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #9589b9;
+        background-color: $button-dark-color;
         @include size(24px, 24px);
         border-radius: 50%;
         margin-left: 70px;
@@ -122,7 +122,7 @@
 
 .messageBlock__messages-message:hover {
     transition: 0.3s linear;
-    background-color: #dadada;
+    background-color: $light-bg-color;
 }
 
 .messageBlock__messages::-webkit-scrollbar {

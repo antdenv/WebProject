@@ -10,17 +10,8 @@
         </button>
     </div>
     <div class="wrapper">
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
+        {{#each matches}}
+            <button class="match__item"><img src="{{this}}" alt="match user" class="item__img"></button>
+        {{/each}}
     </div>
 </div>

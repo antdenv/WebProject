@@ -25,7 +25,7 @@
 .changeForm {
     @include flex-container(column);
     @include size(470px, 400px);
-    background-color: #ffff;
+    background-color: $bg-color-light$bg-color-light;
     border-radius: 28px;
 }
 
@@ -87,7 +87,7 @@
         -moz-appearance: none;
         appearance: none;
         border: 0;
-        background: #ffff;
+        background: $bg-color-light;
         @include button-inputs-style();
         background: $form-button-gradient;
         @include size(152px, 32px);
@@ -114,12 +114,12 @@
         -moz-appearance: none;
         appearance: none;
         border: 0;
-        background: #ffff;
+        background: $bg-color-light;
         @include button-inputs-style();
         background: $form-button-gradient;
         @include size(152px, 32px);
         @include text-styles(14px, 0px);
-        color: #ffff;
+        color: $bg-color-light;
         border-radius: 8px;
         margin-top: 5px;
         transition: 0.1s linear;
