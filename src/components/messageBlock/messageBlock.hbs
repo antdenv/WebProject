@@ -1,18 +1,18 @@
 <div class="messageBlock">
     <div class="messageBlock__upper-buttons">
-        <button id='message-button'>
+        <button id='message__message-button'>
             <img src="./static/images/MsgLight.png" class="messageBlock__MsgDark-png">
                 <div class="messageBlock__upper-buttons_button-text">Message</div> 
         </button>
-        <button id='match-button'>
+        <button id='message__match-button'>
             <img src="./static/images/CardsDark.png" class="messageBlock__cardsDark-png" alt="location">
                 <div class="messageBlock__upper-buttons_button-text">Match</div>
         </button>
     </div>
     <div class="messageBlock__messages">
         {{!-- Add messages --}}
-        <button class="messageBlock__messages-message">
-            <img src="{{imgsrc}}" alt="">
+        <button class="messageBlock__messages-message" id='block-message'>
+            <img src={{imgsrc}} alt="">
             <div class="messageBlock__messages-message__text-block">
                 <p class="messageBlock__messages-message__username">{{username}}</p>
                 <p class="messageBlock__messages-message__text">{{message}}</p>
@@ -22,7 +22,7 @@
             </div>
         </button>
         
-        <button class="messageBlock__messages-message">
+        <button class="messageBlock__messages-message" id='{{userId}}'>
             <img src="{{imgsrc}}" alt="">
             <div class="messageBlock__messages-message__text-block">
                 <p class="messageBlock__messages-message__username">{{username}}</p>
@@ -33,7 +33,7 @@
             </div>
         </button>
 
-        <button class="messageBlock__messages-message">
+        <button class="messageBlock__messages-message" id='{{userId}}'>
             <img src="{{imgsrc}}" alt="">
             <div class="messageBlock__messages-message__text-block">
                 <p class="messageBlock__messages-message__username">{{username}}</p>
@@ -44,7 +44,7 @@
             </div>
         </button>
 
-        <button class="messageBlock__messages-message">
+        <button class="messageBlock__messages-message" id='{{userId}}'>
             <img src="{{imgsrc}}" alt="">
             <div class="messageBlock__messages-message__text-block">
                 <p class="messageBlock__messages-message__username">{{username}}</p>

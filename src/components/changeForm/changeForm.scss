@@ -68,36 +68,34 @@
 
 .changeForm__input-block__button {
     @include flex-container(row);
-    align-items: center;
-    position: relative;
+    align-items: baseline;
     width: 324px;
-    margin-top: 20px;
+    height: 32px;
     p {
-        position: absolute;
-        left: 0;
         font-weight: $font-weight-semibold;
         @include text-styles(16px, 0px);
-        @include size(140px, 20px);
+        @include size(220px, 20px);
         margin: 0px;
     }
-    button {
-        position: absolute;
-        right: 0;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border: 0;
-        background: #ffff;
-        @include button-inputs-style();
+    input::before {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: $form-button-gradient;
         @include size(152px, 32px);
         @include text-styles(14px, 0px);
         color: #ffff;
         border-radius: 6px;
         transition: 0.1s linear;
+        content: "Выберите файл";
+        margin-left: auto;
+        cursor: pointer;
     }
-
-    button:hover {
+    input::-webkit-file-upload-button {
+        display: none;
+        position: absolute;
+    }
+    input:hover::before {
         transition: 0.1s linear;
         transform: scale(0.98);
     }
@@ -105,10 +103,9 @@
 
 .changeForm__bottom-button {
     @include flex-container(row);
-    align-items: stretch;
     width: 324px;
     position: relative;
-    margin-top: 20px;
+    margin-top: 15px;
     button {
         -webkit-appearance: none;
         -moz-appearance: none;
