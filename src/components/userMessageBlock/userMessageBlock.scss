@@ -32,20 +32,20 @@
 
 .user__message {
     @include flex-container(column);
-    @include size(475px, 762px);
+    @include size(475px, 700px);
     border-radius: 15px;
     background-color: $bg-color-light;
 }
 
 .message__body {
     @include flex-container(column);
-    @include size(431px, 657px);
+    @include size(431px, 600px);
     border-radius: 10px;
     background-color: $light-bg-color;
 }
 
 .body__message-layout {
-    @include size(391px, 551px);
+    @include size(391px, 500px);
     @include flex-container(column);
     border-radius: 10px;
     background-color: $bg-color-light;

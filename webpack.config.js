@@ -40,7 +40,7 @@ module.exports = {
                 include: [path.resolve(__dirname, "src/")],
             },
             {
-                test: /\.scss$/,
+                test: /\.s[ac]ss$/i,
                 use: ["style-loader", "css-loader", "sass-loader"],
             },
             {

@@ -10,6 +10,13 @@
     flex-direction: $flexDirectionProperty;
 }
 
+@mixin grid-position($column-start, $column-end, $row-start, $row-end) {
+    grid-column-start: $column-start;
+    grid-column-end: $column-end;
+    grid-row-start: $row-start;
+    grid-row-end: $row-end;
+}
+
 .mainPage {
     position: absolute;
     left: 0;
@@ -20,57 +27,51 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    display: grid;
+    grid-template-rows: repeat(4, 250px);
+    grid-column-gap: 1em;
 }
 
 .mainPage__userIcon {
-    position: absolute;
-    left: 201px;
-    top: 68px;
+    @include grid-position(1, 1, 1, 1);
+    align-self: center;
 }
 
 .mainPage__messageBlock {
-    position: absolute;
-    left: 201px;
-    top: 246px;
     transition: opacity 1s;
+    @include grid-position(1, 1, 2, 4);
+    align-self: flex-start;
 }
 
 .mainPage__matchBlock {
-    position: absolute;
-    left: 201px;
-    top: 246px;
+    @include grid-position(1, 1, 2, 4);
+    align-self: flex-start;
     display: none;
     transition: opacity 1s;
 }
 
 .mainPage__changeForm {
-    position: absolute;
-    left: 201px;
-    top: 246px;
+    @include grid-position(1, 1, 2, 4);
+    align-self: flex-start;
     display: none;
     transition: opacity 1s;
 }
 
 .mainPage__userMessageBlock {
-    position: absolute;
-    left: 201px;
-    top: 246px;
+    @include grid-position(1, 1, 2, 5);
+    align-self: flex-start;
     display: none;
     transition: opacity 1s;
 }
 
 .mainPage__feedPhotoCard {
-    position: absolute;
+    @include grid-position(2, 2, 1, 5);
     align-self: center;
-    justify-self: center;
-    top: 68px;
 }
 
 .mainPage__feedInfoCard {
-    position: absolute;
-    right: 196px;
-    top: 68px;
+    @include grid-position(3, 3, 1, 4);
+    align-self: center;
 }
 
 // Active classes
@@ -82,30 +83,3 @@
 .display-none {
     display: none;
 }
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     z-index: 3;
-
-//     background-image: url("./static/images/background.png");
-//     background-repeat: no-repeat;
-//     background-size: cover;
-// }
-
-// .overlay {
-//     @include size(100%, 100vh);
-//     background: $overlay-gradient;
-//     opacity: 65%;
-//     position: absolute;
-//     z-index: 2;
-
-//     @media (max-width: 1600px) {
-//         background-repeat: repeat-x;
-//         opacity: 85%;
-//     }
-
-//     @media (max-width: 1150px) {
-//         opacity: 95%;
-//     }
-// }

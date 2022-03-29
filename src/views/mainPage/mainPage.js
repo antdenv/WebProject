@@ -55,14 +55,24 @@ export class mainView extends View {
      * @param {Object} error
      */
     showErrors(error) {
-        if (error.emailError) {
-            document.getElementById("login").style.borderColor = "#CF5151";
-            document.getElementById("email-error").innerHTML = error.emailError;
+        if (error.nameError) {
+            document.getElementById("name-input").style.borderColor = "#CF5151";
+            document.getElementById("name-error").innerHTML = error.nameError;
+        }
+
+        if (error.surnameError) {
+            document.getElementById("surname-input").style.borderColor = "#CF5151";
+            document.getElementById("surname-error").innerHTML = error.surnameError;
+        }
+
+        if (error.ageError) {
+            document.getElementById("age-input").style.borderColor = "#CF5151";
+            document.getElementById("age-error").innerHTML = error.ageError;
         }
 
         if (error.passwordError) {
-            document.getElementById("password").style.borderColor = "#CF5151";
-            document.getElementById("password-error").innerHTML = error.passwordError;
+            document.getElementById("city-input").style.borderColor = "#CF5151";
+            document.getElementById("city-error").innerHTML = error.passwordError;
         }
     }
 
@@ -76,24 +86,35 @@ export class mainView extends View {
         document.getElementById("password-error").style.visibility = "hidden";
     }
 
+    /**
+     * Function for rendering chat
+     */
     openChat() {
         document.querySelector(".mainPage__messageBlock").classList.toggle("display-none");
         document.querySelector(".mainPage__matchBlock").classList.toggle("display-none");
         document.querySelector(".mainPage__userMessageBlock").classList.toggle("display-flex");
     }
 
+    /**
+     * Function for rendering change block
+     */
     editBlockSwitcher() {
         document.querySelector(".mainPage__messageBlock").classList.toggle("display-none");
         document.querySelector(".mainPage__matchBlock").classList.toggle("display-none");
         document.querySelector(".mainPage__changeForm").classList.toggle("display-flex");
-        document;
     }
 
+    /**
+     * Function for rendering match block
+     */
     matchBlockSwitcher() {
         document.querySelector(".mainPage__messageBlock").classList.toggle("display-none");
         document.querySelector(".mainPage__matchBlock").classList.toggle("display-flex");
     }
 
+    /**
+     * Function for rendering message block
+     */
     messageBlockSwitcher() {
         document.querySelector(".mainPage__matchBlock").classList.toggle("display-flex");
         document.querySelector(".mainPage__messageBlock").classList.toggle("display-none");
